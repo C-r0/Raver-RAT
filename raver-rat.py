@@ -32,13 +32,12 @@ port = 5000
 logs = 'ip.log'
 
 def ip_log(data):
-    """Salva o dicionário 'data' em formato JSONL."""
     with open(logs, 'a', encoding='utf-8') as f:
         f.write(json.dumps(data, ensure_ascii=False) + '\n')
 
 def handle_client(conn, addr):
     client_ip, client_port = addr
-    print(f"[+] Conexão {client_ip}:{client_port}")
+    print(f"[+] Connection {client_ip}:{client_port}")
 
     # Tentar ler até 4 KB (suficiente para o JSON enviado)
     try:
@@ -72,7 +71,7 @@ def main():
         s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         s.bind((host, port))
         s.listen()
-        print(f"Servidor TCP ouvindo em {host}:{port}")
+        print(f"Server TCP listening on {host}:{port}")
         while True:
             conn, addr = s.accept()  # addr = (ip, port)
             # lançar thread para não bloquear accept()
