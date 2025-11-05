@@ -5,7 +5,7 @@ from os import name, system
 import socket
 import threading
 import json
-from datetime import datetime
+from datetime import datetime, timezone
 
 def RaverText():
 	print(Fore.RED + """
@@ -56,7 +56,7 @@ def handle_client(conn, addr):
 
     # Monta registro para o log
     log_entry = {
-        "time": datetime.utcnow().isoformat() + "Z",
+        "time": datetime.now(timezone.utc).isoformat() + "Z",
         "client_ip": client_ip,
         "client_port": client_port,
         "payload": payload
