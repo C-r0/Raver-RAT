@@ -1,4 +1,3 @@
-import requests
 import socket
 import json
 import sys
@@ -7,14 +6,6 @@ import os
 
 SERVER_HOST = '127.0.0.1'  # Your Ip | Server Ip
 SERVER_PORT = 5000
-
-def get_ip():
-    try:
-        r = requests.get("https://api.ipify.org?format=json", timeout=5)
-        r.raise_for_status()
-        return r.json().get("ip")
-    except Exception as e:
-        return None
 
 def send_to_server(message_dict):
     msg = json.dumps(message_dict) + '\n'
@@ -27,7 +18,6 @@ def send_to_server(message_dict):
 def main():
     my_ip = get_ip()
     payload = {
-        "public_ip": my_ip,
         "user": os.getlogin(),
         "uname": platform.uname(),
         "cpu": os.cpu_count()
