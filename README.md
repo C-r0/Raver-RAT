@@ -13,4 +13,4 @@ You have to change the file client-rat.py to set your ip adress or host
 
 And you can make the python file executable or just send it in python, have you server ready and don't forget to leave the port open, and it's gonna work.
 
-If the logs isn't writing, try executing the raver-rat with sudo.
+If the logs isn't writing, try executing the raver-rat with root/admin privileges.
