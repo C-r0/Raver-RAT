@@ -1,4 +1,7 @@
 # Raver-RAT
+
+I know python is not the best language for creating malware, nowadays I use C++ this project was just a test and the beginning of my learning (easy to reverse engineer, difficult to control fully because it is not low level, leading to being easier to detect)
+
 A RAT build in python, still incomplete
 <img width="958" height="227" alt="image" src="https://github.com/user-attachments/assets/9f934113-21c2-4c57-8b65-fbf5f8508614" />
 
